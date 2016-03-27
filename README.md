@@ -14,7 +14,16 @@ Use whatever languages and frameworks you are comfortable with. Don't worry abou
 the whole thing working flawlessly, this is more to see how you structure a program. Please
 don't spend more than a few hours on it.
 
-## Submission
+## Running the application
 
-Please fork this repository, write some code and update this README with a guide of how to
-run it.
+### Build the docker image if necessary
+
+    docker build -t farmdrop .
+
+### Run the webserver on port 3000
+
+    docker run --rm -it -p 3000 farmdrop
+
+### Run the rspec tests
+
+    docker run --rm -it farmdrop rspec
