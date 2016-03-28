@@ -4,17 +4,17 @@ require "sinatra/json"
 
 class URLShortener < Sinatra::Base
   set :urls, {}
+  set :views, 'views'
 
   get "/" do
-    content_type "text/plain"
-    return "I shorten urls"
+    erb :home
   end
 
   post "/shorten" do
     key = SecureRandom.urlsafe_base64(6)
     url = params[:url]
     settings.urls[key] = url
-    json :key => key, :url => url
+    json :key => key, :url => url, :short_url => url("/#{key}")
   end
 
   get "/:key" do

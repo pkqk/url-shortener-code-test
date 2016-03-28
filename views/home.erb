@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>I shorten URLs</title>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+<h1>I shorten URLs</h1>
+<form action="/shorten">
+    <p>
+        When you go to <input type="url" name="url" placeholder="http://example.com">
+        then you should be redirected to <input type="url" name="redirect">.
+    </p>
+    <p><input id="shorten" type="button" value="Make it so!"></p>
+</form>
+<script>
+$("#shorten").click(function() {
+    var form = $(this).parents("form");
+    var action = form.attr("action");
+    $.post(action, form.serialize(), function(data) {
+        $(form).find("input[name=redirect]").val(data.short_url);
+    });
+});
+</script>
+</html>
