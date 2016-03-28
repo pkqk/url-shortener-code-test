@@ -4,21 +4,29 @@ A very simple non-persistant url shortener
 
 ## Running the application
 
-I've tried developing the app in docker just for the hell of it but if that
-doesn't work you can run the app with:
+### Running from docker repository
+
+I've pushed an image up to the docker hub so you should be able to run the
+app without setting anything up:
+
+    docker run --rm -it -p 3000:3000 pkqk/farmdrop
+
+If docker isn't your thing then you can run the app with:
 
     bundle install
     bundle exec rackup -p 3000
 
-### Build the docker image if necessary
+### Building and running the docker image from a checkout
+
+Build the docker image if necessary:
 
     docker build -t farmdrop .
 
-### Run the webserver on port 3000
+Run the webserver on port 3000:
 
     docker run --rm -it -p 3000:3000 farmdrop
 
-### Run the rspec tests
+Run the rspec tests:
 
     docker run --rm -it farmdrop rspec
 
