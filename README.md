@@ -28,3 +28,4 @@ doesn't work you can run the app with:
    action and rendering a template with the result for html posts
 2. It doesn't validate the form or check for empty form submissions
 3. It doesn't do any de-deduplication of URLs
+4. The javascript is untested
