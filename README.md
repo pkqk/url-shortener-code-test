@@ -15,7 +15,7 @@ I've tried developing the app in docker just for the hell of it but if that does
 
 ### Run the webserver on port 3000
 
-    docker run --rm -it -p 3000 farmdrop
+    docker run --rm -it -p 3000:3000 farmdrop
 
 ### Run the rspec tests
 
