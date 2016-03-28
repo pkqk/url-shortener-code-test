@@ -22,5 +22,8 @@ $("#shorten").click(function() {
         $(form).find("input[name=redirect]").val(data.short_url);
     });
 });
+$("input[type=url]").click(function() {
+    $(this).select();
+});
 </script>
 </html>
