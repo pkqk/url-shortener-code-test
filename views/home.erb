@@ -21,10 +21,12 @@ input[type=url] {
 <h1>I shorten URLs</h1>
 <form action="/shorten">
     <p>
-        When you go to <input type="url" name="url" placeholder="http://example.com">
-        then you should be redirected to <input type="url" name="redirect">.
+        What URL would you liked shortened? <input type="url" name="url" placeholder="http://example.com">
     </p>
     <p><input id="shorten" type="button" value="Make it so! 👉"></p>
+    <p>
+        Here you go <input type="url" name="redirect">.
+    </p>
 </form>
 <script>
 $("#shorten").click(function() {
