@@ -1,4 +1,4 @@
-FROM ruby:2.3-alpine
+FROM ruby:2.4-alpine
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
@@ -14,4 +14,4 @@ COPY . /usr/src/app
 
 EXPOSE 3000
 
-CMD [ "rackup", "-p", "3000", "--host", "0.0.0.0" ]
+CMD [ "rackup", "-p", "3000", "-o", "0.0.0.0" ]
