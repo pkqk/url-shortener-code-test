@@ -1,10 +1,10 @@
-require 'securerandom'
+require "securerandom"
 require "sinatra"
 require "sinatra/json"
 
 class URLShortener < Sinatra::Base
   set :urls, {}
-  set :views, 'views'
+  set :views, "views"
 
   get "/" do
     erb :home
@@ -20,5 +20,4 @@ class URLShortener < Sinatra::Base
   get "/:key" do
     redirect settings.urls[params[:key]]
   end
-
 end

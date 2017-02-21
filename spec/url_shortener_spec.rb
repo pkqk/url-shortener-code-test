@@ -15,7 +15,7 @@ describe URLShortener do
     expect(response["url"]).to eql("http://example.com")
   end
 
-  it "redirect to a shortened url" do
+  it "redirects to a shortened url" do
     url = "http://interesting.destination"
     post "/shorten", :url => url
     response = JSON.parse(last_response.body)
