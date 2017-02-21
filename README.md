@@ -20,15 +20,15 @@ If docker isn't your thing then you can run the app with:
 
 Build the docker image if necessary:
 
-    docker build -t farmdrop .
+    docker-compose build
 
 Run the webserver on port 3000:
 
-    docker run --rm -it -p 3000:3000 farmdrop
+    docker-compose up app
 
 Run the rspec tests:
 
-    docker run --rm -it farmdrop rspec
+    docker-compose run specs
 
 ## Known issues
 

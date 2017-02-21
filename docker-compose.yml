@@ -2,5 +2,10 @@ version: "2"
 services:
   app:
     build: .
+    image: pkqk/farmdrop
     ports:
       - "3000:3000"
+  specs:
+    build: .
+    image: pkqk/farmdrop
+    command: rspec
